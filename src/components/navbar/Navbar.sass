@@ -1,0 +1,107 @@
+@use '../../styles/_mixins'
+   
+.navbar
+   z-index: 10
+   position: absolute
+   top: 40px
+   width: 95%
+   right:0
+   .nav-mobile
+      display: none
+      width: 100%
+      height: 100vh
+      overflow-y: hidden
+      background-size: cover
+      background-repeat: no-repeat
+      background-image: url('../../assets/destination/background-destination-desktop.jpg')
+      @include mixins.tablet
+         display: flex
+         flex-direction: column-reverse
+         gap: 40px
+         justify-content: center
+         margin-top: 15px 
+         padding-left:40px
+         list-style: none
+         span
+            letter-spacing: 1px
+         li > a
+            color: #e9e9e9
+            letter-spacing: 4px
+            text-decoration: none
+            font-size: 1.7rem
+            padding-bottom: 5px
+            &:hover
+               border-bottom: solid 3px 
+          
+
+   @include mixins.tablet 
+      top: 0
+      width: 100%
+      position: fixed
+      background: #000
+      padding: 1rem 0
+      display: flex
+      flex-direction: column-reverse
+      z-index: 99
+      overflow: hidden
+   
+   
+   .line
+      width: 80%
+      height: 2px
+      background: #e9e9e91f
+      transform: translateX(35px)
+      z-index: 20
+      @include mixins.tablet
+         display: none
+   span
+    font-weight: 600
+   nav
+    width: 100%
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    @include mixins.tablet
+      width: 95%
+   
+   
+    .descktop-ul
+     display: flex
+     background: #d8d7d70b
+     backdrop-filter: blur(20px)
+     padding: 2rem 5rem 2rem 3rem
+     min-width: 700px
+     gap: 30px
+     list-style: none
+     @include mixins.tablet
+         display: none
+
+    li.active > a
+      padding-bottom: 1.66rem
+      border-bottom: solid 5px #e9e9e9 
+      transition: .2s
+
+
+    li > a
+     color: #e9e9e9
+     text-decoration: none
+     letter-spacing: 2px
+     font-size: 13px
+     padding: 2rem .5rem
+     
+   .menu-mobile 
+      padding: 1rem
+      background: transparent
+      border: none
+      cursor: pointer
+      display: none
+      @include mixins.tablet
+         display: flex
+
+   .mobile-ul
+      background: red
+.logo
+   transition: .2s
+   &:hover
+      transform: rotate(90deg)

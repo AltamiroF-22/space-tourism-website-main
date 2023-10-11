@@ -1,0 +1,36 @@
+@use '../../styles/_mixins'
+
+
+.aside-technology ul
+   background: #101620
+   gap: 20px
+   align-items: center
+   justify-content: center
+   padding: .5rem 
+   margin-top: 40px 
+   border-radius:100px
+   display: flex
+   list-style: none
+   @include mixins.tablet
+      position: absolute
+      top: 90%
+      left: 40px
+      transform: translateY(-50%)
+      z-index: 10
+   @include mixins.mobile
+      top: 90%
+      left: 0
+      transform: scale(.8)
+   li
+      width: 40px
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 40px
+      cursor: pointer
+      font-weight: 600
+      transition: .2s
+      &:hover
+         background: #9fb7e2
+         border-radius: 50%
+         color: #000

@@ -1,0 +1,102 @@
+@use '../../styles/_variables'
+@use '../../styles/_mixins'
+
+.crew-page
+   height: 100vh
+   width: 100%
+   background-image: url('../../assets/crew/background-crew-desktop.jpg')
+   background-repeat: no-repeat
+   background-size: cover
+   position: relative
+   color: variables.$primary-color
+   letter-spacing: 2px
+   @include mixins.tablet
+      display: flex
+      justify-items: center
+      align-items: center
+      background-image: url('../../assets/crew/background-crew-desktop.jpg')
+
+   .divider
+      padding-top: 170px
+      @include mixins.tablet
+         display: none
+   
+   .content
+      display: flex
+      width: 100%
+      justify-content: space-around
+      height: 400px
+      position: absolute
+      bottom: 40px
+      
+      @include mixins.tablet
+         display: flex
+         justify-content: center
+         align-items: center
+         height: 400px
+         top: 50%
+         left: 50%
+         transform: translate(-50%, -50%)
+         .image
+            transform: translateY(0)
+            
+            img
+               width: 90%
+               border-bottom: solid 1px #fff
+         
+         .relative-text
+            width: 90%
+            height: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            h1
+               font-size: 3.4rem
+            p
+               line-height: 1
+               font-size: 18px
+            h5
+               margin: 20px 10px 10px 0
+      @include mixins.mobile 
+         // gap: 60px
+         gap: 0
+         flex-direction: column-reverse
+         width: 100%
+         text-align: center
+
+         .image
+            transform: scale(.8)   
+            
+         .relative-text
+            min-height: 300px
+              
+   .image
+      transform: translateY(40px)
+      display: flex
+      img
+         width: 340px
+         max-height: 400px
+         
+
+   .relative-text
+      max-width: 500px
+      animation: startBottom .3s ease-out
+      height: 50%
+      h1
+         font-size: 3rem
+         text-align: center
+         margin-bottom: 30px   
+      p
+         line-height:1.4 
+         margin-top: 30px   
+
+
+      
+@keyframes startBottom
+  0%
+    transform: translateY(100px)
+
+  100%
+    transform: translateY(0)
+
+

@@ -1,0 +1,101 @@
+@use '../../styles/_variables'
+@use '../../styles/_mixins'
+
+.destination-page
+   height: 100vh
+   width: 100%
+   background-image: url('../../assets/destination/background-destination-desktop.jpg')
+   background-repeat: no-repeat
+   background-size: cover
+   color: variables.$primary-color
+   letter-spacing: 2px
+   @include mixins.tablet
+      display: flex
+      justify-items: center
+      align-items: center
+ 
+   
+   .divider
+      padding-top: 190px
+      @include mixins.tablet
+         display: none
+   
+   .content
+      display: flex
+      width: 100%
+      justify-content: space-around
+      @include mixins.tablet
+         display: flex
+         justify-content: center
+         align-items: center
+         height: 400px
+         width: 90%
+         gap: 50px
+         margin: 0 auto
+         
+         .image
+            transform: translateY(0)
+            img
+               width: 90%
+         
+         .relative-text
+            width: 90%
+            height: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            h1
+               font-size: 3.4rem
+            p
+               line-height: 1
+               font-size: 18px
+            h4
+               margin: 20px 10px 10px 0
+              
+      @include mixins.mobile 
+         // gap: 60px
+         gap: 0
+         flex-direction: column
+         width: 100%
+         text-align: center
+
+         .image
+            transform: scale(.8)
+         .relative-text
+            min-height: 300px
+   .image
+      transform: translateY(-40px)
+      animation: startFade .3s   ease-out
+
+   .relative-text
+      max-width: 400px
+      animation: startBottom .3s ease-out
+      height: 100%
+      h1
+         font-size: 4rem
+         text-align: center
+         margin-bottom: 10px   
+      p
+      line-height:1.4 
+      h4
+         margin: 30px 10px 10px 0
+         font-size: 13px
+
+
+@keyframes startBottom
+  0%
+    transform: translateY(100px)
+
+  100%
+    transform: translateY(0)
+
+
+@keyframes startFade
+  0%
+    opacity: 0
+
+  100%
+   opacity: 1
+
+.startBottom
+  animation: startFade .3s ease-out

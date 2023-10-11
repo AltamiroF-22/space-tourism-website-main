@@ -1,0 +1,130 @@
+@use '../../styles/_variables'
+@use '../../styles/_mixins'
+
+
+.home-page
+   height: 100vh
+   width: 100%
+   background-image: url('../../assets/home/background-home-desktop.jpg')
+   background-repeat: no-repeat
+   background-size: cover
+   overflow: hidden
+   color: variables.$primary-color
+   letter-spacing: 2px
+   @include mixins.tablet
+      background-image: url('../../assets/home/background-home-tablet.jpg')
+      display: flex
+      justify-content: center
+      align-items: center
+      
+
+   .divider
+      padding-top: 260px
+      @include mixins.tablet
+         display: none
+
+
+   .content
+      display: flex
+      width: 80%
+      justify-content: space-between
+      align-items: center
+      margin: 0 auto
+      @include mixins.tablet
+         width: 90%
+         span
+            font-size: 5rem
+         .button
+            transform: scale(.8)
+      @include mixins.mobile
+         flex-direction: column
+         text-align: center
+         gap: 40px
+         .text
+            min-width: 85%
+         span
+            font-size: 4rem
+                  
+      .text
+         max-width: 50%
+         display: flex
+         flex-direction: column
+         line-height: 1.5
+         animation: startLeft .3s   ease-out
+
+   h2
+      font-size: 25px
+   span
+      font-size: 7.5rem
+      margin: 0px 10px
+   p
+      font-size: 14px
+      color: variables.$secundary-color
+      letter-spacing: 1px
+      line-height: 1.5
+   .button
+      height: 220px
+      width: 220px
+      display: flex
+      align-items: center
+      justify-content: center
+      text-decoration: none
+      color: #000
+      font-size: 23px
+      border-radius: 50%
+      cursor: pointer
+      position: relative
+      letter-spacing: 2px
+      background: #ffffff
+      z-index: 20
+      &::before
+         content: ''
+         background-color: #ffffff
+         width: 220px
+         height: 220px
+         animation: questionAnime 1.5s infinite forwards ease-in-out        
+         position: absolute
+         left: 50%
+         top: 50%     
+         transform: translate(-50%, -50%)
+         border-radius: 50%
+         z-index: -1
+
+      &::after
+         content: ''
+         background-color: #ffffff
+         width:220px
+         height: 220px
+         animation: questionAnime 1.5s .3s infinite forwards ease-in-out
+         position: absolute
+         left: 50%
+         top: 50%
+         z-index: -1
+         transform: translate(-50%, -50%)
+         border-radius: 50%
+
+@keyframes questionAnime 
+  0%
+  
+    opacity: 1
+  
+  50%
+   
+    opacity: .8
+  
+  
+  100%
+    width: 250px
+    height: 250px
+    opacity: 0
+
+
+@keyframes startLeft
+  0%
+    transform: translateX(-200px)
+
+  100%
+    transform: translateX(0)
+
+
+    

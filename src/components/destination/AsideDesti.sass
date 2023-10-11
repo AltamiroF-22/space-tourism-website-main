@@ -1,0 +1,30 @@
+@use '../../styles/_mixins'
+
+.aside-desti ul
+   background: #101620
+   gap: 20px
+   align-items: center
+   justify-content: center
+   width: 10px
+   padding: 1.5rem 2rem
+   margin-left: -30px
+   margin-top: 40px 
+   border-radius:100px
+   display: flex
+   flex-direction: column 
+   position: absolute
+   @include mixins.tablet
+      top: 50%
+      left: 40px
+      transform: translateY(-50%)
+      z-index: 10
+   @include mixins.mobile
+      top: 30%
+      transform: scale(.8)
+      
+   img
+      width: 34px
+      cursor: pointer
+      transition: .2s
+      &:hover
+         transform: scale(1.3)
